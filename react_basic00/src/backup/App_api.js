@@ -5,8 +5,10 @@ import { useEffect, useState } from 'react';
 
 
 
-const App = () => {
+const DataCunect = ({ st, ed }) => {
   const [data, setData] = useState([]);
+
+  console.log(st, ed)
 
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/todos')
@@ -16,7 +18,7 @@ const App = () => {
 
   // axios 
 
-  //JSON.parse()
+  // JSON.parse()
 
   // console.log(Object(data[0]).id)
   // async await ????
@@ -24,10 +26,10 @@ const App = () => {
   return (
     <div>
       {
-        data.map(it => <li key={it.id}>{it.id} {it.title}</li>).slice(0, 10)
+        data.map(it => <li key={it.id}>{it.id} {it.title} </li>).slice(st, ed)
       }
     </div>
   )
 }
 
-export default App;
+export default DataCunect;

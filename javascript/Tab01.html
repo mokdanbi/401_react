@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,11 +11,12 @@
             display: none;
         }
 
-        .content>div:nth-child(1) {
+        .content>div.on {
             display: block;
         }
     </style>
 </head>
+
 <body>
     <div class="tabmenu">
         <ul class="menu">
@@ -23,23 +25,25 @@
             <li>menu03</li>
         </ul>
         <div class="content">
-            <div>content01</div>
+            <div class="on">content01</div>
             <div>content02</div>
             <div>content03</div>
         </div>
     </div>
     <script>
-        document.querySelectorAll('.menu li').forEach((el, idx) => {
-            el.addEventListener('click', (e)=> {
-                console.log(e.target, idx, document.querySelectorAll('.content>div')[idx]);
-                // const TG = e.target;
-                document.query
-                TG.classList.add('on');
-                const TAB = document.querySelectorAll('.content>div');
-                TAB.forEach(x => x.classList.remove('on'));
-                TAB[idx].classList.add('on')
+
+        const MENU = document.querySelectorAll('.menu li');
+        const TAB = document.querySelectorAll('.content>div');
+        MENU.forEach((el, idx) => {
+            el.addEventListener('click', (e) => {
+                console.log([...MENU], e.target, [...MENU].indexOf(e.target));
+                MENU.forEach(el => el.classList.remove('on'));
+                el.classList.add('on');
+                TAB.forEach(el => el.classList.remove('on'));
+                TAB[idx].classList.add('on');
             })
         })
     </script>
 </body>
+
 </html>

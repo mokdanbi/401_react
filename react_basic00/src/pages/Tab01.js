@@ -1,4 +1,5 @@
 import { useState } from "react";
+import TabContent02 from '../backup/App_api'
 
 const TabContent01 = () => {
     return (
@@ -13,9 +14,9 @@ const TabContent01 = () => {
 }
 
 const TabData = [
-    { id: 1, title: "menu01", content: <TabContent01 /> },
-    { id: 2, title: "menu02", content: "content02" },
-    { id: 3, title: "menu03", content: "content03" },
+    { id: 1, title: "menu01", content: <TabContent02 st={0} ed={10} /> },
+    { id: 2, title: "menu02", content: <TabContent02 st={10} ed={20} /> },
+    { id: 3, title: "menu03", content: <TabContent02 st={20} ed={30} /> },
 ]
 const Tab = () => {
     const [num, setNum] = useState(0)
