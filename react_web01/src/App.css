@@ -1,0 +1,11 @@
+.bg {
+  height: 400px;
+}
+
+
+.bg01 {
+  background: url(./assets/grafflogo.png);
+}
+.bg02 {
+  background: url(../public/assets/mainvisual01.jpg);
+}
